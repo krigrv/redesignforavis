@@ -1,17 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-  <title>Embedding Vega-Lite</title>
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC">
-  <link rel="stylesheet" href="/redesignforavis/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.0-rc5/vega.js"></script>
+<title>Redesign</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+<link href="css/font-awesome.css" rel="stylesheet"> 
+
+<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="all">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+
+<!-- //font -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.0-rc5/vega.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.0-beta.11/vega-lite.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-beta.19/vega-embed.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
 </head>
 <body>
 
-  <div id="vis"></div>
+	<!-- about -->
+	<div class="about" id="about"> 
+		<div class="container"> 
+			<div class="welcome">
+				<div class="agileits-title"> 
+					<h2>Website Redesign</h2>
+					<p>Data Visualization Assignment</p>
+				</div>
+			</div>
+		
+<div id="vis"></div>
+
   <script type="text/javascript">
     var yourVlSpec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v2.0.json",
@@ -23,7 +58,7 @@
           {"a": "G","b": 19}, {"a": "H","b": 87}, {"a": "I","b": 52}
         ]
       },
-      "mark": "bar",
+      "mark": "circle",
       "encoding": {
         "x": {"field": "a", "type": "ordinal"},
         "y": {"field": "b", "type": "quantitative"}
@@ -31,5 +66,59 @@
     }
     vega.embed("#vis", yourVlSpec);
   </script>
-</body>
+
+		</div>
+	</div>
+
+
+
+	<!-- //copyright -->
+	<script src="js/jarallax.js"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- Tabs-JavaScript -->
+	<script src="js/jquery.filterizr.js"></script>
+		<script src="js/controls.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.filtr-container').filterizr();
+			});
+		</script>
+	<!-- //Tabs-JavaScript -->
+	<!-- PopUp-Box-JavaScript -->
+		<script src="js/jquery.chocolat.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.filtr-item a').Chocolat();
+			});
+		</script>
+	<!-- //PopUp-Box-JavaScript -->
+</body>	
 </html>
